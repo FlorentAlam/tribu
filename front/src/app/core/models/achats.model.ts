@@ -1,9 +1,11 @@
-export interface AchatItem {
-    name: string,
-    quantity: string
+export class AchatItem {
+    constructor(
+        public name: string, 
+        public quantity: string){}
 }
 
-export interface Achat {
-    category: string,
-    items: AchatItem[]
+export class Achat {
+    constructor(
+        public category: string, 
+        public items: AchatItem[]){}
 }

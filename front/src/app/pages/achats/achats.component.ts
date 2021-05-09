@@ -4,7 +4,7 @@ import { map, filter, tap, takeUntil, take } from 'rxjs/operators'
 import { Observable, Subject, Subscription } from "rxjs";
 import { select, Store } from "@ngrx/store";
 import { AchatsState } from "src/app/store/reducers/achats.reducer";
-import { LoadAchats } from "src/app/store/actions/achats.actions";
+import { LoadAchats, LoadAchatsStart } from "src/app/store/actions/achats.actions";
 import { Achat } from "src/app/core/models/achats.model";
 
 @Component({
@@ -20,12 +20,10 @@ export class AchatsComponent implements OnInit, OnDestroy{
         select(state => state.achats.achats)
     );
 
-    constructor(private _achats: AchatService, private _store: Store<{achats: AchatsState}>){}
+    constructor(private _store: Store<{achats: AchatsState}>){}
 
     ngOnInit(){
-        this._achats.getAchats().pipe(take(1)).subscribe(data => {
-            this._store.dispatch(new LoadAchats(data));
-        });
+        this._store.dispatch(new LoadAchatsStart());
     }
 
     ngOnDestroy(){

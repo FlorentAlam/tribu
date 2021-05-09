@@ -11,9 +11,9 @@ import { AuthLayout } from './pages/layout/auth-layout.component';
 import { SharedModule } from './core/shared/shared.module';
 import { AuthComponent } from './pages/authentification/authentification.component';
 import { StoreModule } from '@ngrx/store';
-import { achatReducer } from './store/reducers/achats.reducer';
-import { CommonModule } from '@angular/common';
 import { AppState } from './store/appState';
+import { EffectsModule } from '@ngrx/effects';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { AppState } from './store/appState';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    StoreModule.forRoot(AppState)
+    StoreModule.forRoot(AppState),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
