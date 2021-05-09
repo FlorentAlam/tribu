@@ -10,6 +10,10 @@ import { InscriptionComponent } from './pages/inscription/inscription.component'
 import { AuthLayout } from './pages/layout/auth-layout.component';
 import { SharedModule } from './core/shared/shared.module';
 import { AuthComponent } from './pages/authentification/authentification.component';
+import { StoreModule } from '@ngrx/store';
+import { achatReducer } from './store/reducers/achats.reducer';
+import { CommonModule } from '@angular/common';
+import { AppState } from './store/appState';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,7 @@ import { AuthComponent } from './pages/authentification/authentification.compone
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    StoreModule.forRoot(AppState)
   ],
   providers: [],
   bootstrap: [AppComponent]

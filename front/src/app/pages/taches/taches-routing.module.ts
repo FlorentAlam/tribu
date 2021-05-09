@@ -6,7 +6,7 @@ const routes: Routes = [
     {path: '', component: TachesComponent}
 ]
 @NgModule({
-    imports: [ RouterModule.forRoot(routes)],
+    imports: [ RouterModule.forChild(routes)],
     exports: [ RouterModule ]
 })
 export class TachesRoutingModule{}

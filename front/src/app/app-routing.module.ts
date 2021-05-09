@@ -8,8 +8,6 @@ import { AuthComponent } from './pages/authentification/authentification.compone
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'authentification/:type', component: AuthComponent},
-  {path: 'connexion', component: ConnexionComponent},
-  {path: 'inscription', component: InscriptionComponent},
   {path: 'achats', loadChildren: () => import('./pages/achats/achats.module').then(m => m.AchatsModule)},
   {path: 'messagerie', loadChildren: () => import('./pages/messagerie/messagerie.module').then(m => m.MessagerieModule)},
   {path: 'taches', loadChildren: () => import('./pages/taches/taches.module').then(m => m.TachesModule)}
