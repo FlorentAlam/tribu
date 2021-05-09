@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  learn-it:
+    restart: always
+    container_name: front
+    build: ./front
+    working_dir: /usr/src/app
+    ports: 
+      - "4200:4200"
+    volumes: 
+      - ./front:/usr/src/app
+
+
+  backend:
+    restart: always
+    build: ./api
+    container_name: api
+    environment:
+      MYSQL_URI: "mysql://root:secret@mysql:3306/tribu"
+    working_dir: /usr/src/api
+    ports:
+      - "4201:4201"
+    #volumes:
+     # - ./api:/usr/src/api
+
+      
+  mysql:
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: tribu
+    restart: always
+    build: ./mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/db:/var/lib/mysql

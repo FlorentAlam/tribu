@@ -1,0 +1,10 @@
+<Auth-layout>
+    <div class="form-container" [ngClass]="imgPosition">
+        <app-inscription *ngIf="imgPosition === 'right'"></app-inscription>
+        <app-connexion *ngIf="imgPosition === 'left'"></app-connexion>
+    </div>
+    
+    <div [ngClass]="imgPosition" class="img-container">
+        <img src="assets/family.svg"/>
+    </div>
+</Auth-layout>

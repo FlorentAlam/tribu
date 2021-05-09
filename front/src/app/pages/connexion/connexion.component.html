@@ -1,0 +1,11 @@
+<form [formGroup]="connexionForm" (ngSubmit)="onSubmit()">
+    <Shared-form-input label="Adresse email">
+        <input type="text" formControlName="email" autocomplete="email"/>
+    </Shared-form-input>
+    <Shared-form-input label="Mot de passe">
+        <input type="password" formControlName="password" autocomplete="current-password"/>
+    </Shared-form-input>
+
+    <Shared-button content="Connexion"></Shared-button>
+    <Shared-error *ngIf="error.activated" [content]="error.message"></Shared-error>
+</form>

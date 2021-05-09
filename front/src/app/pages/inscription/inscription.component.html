@@ -1,0 +1,14 @@
+<form [formGroup]="inscriptionForm" (ngSubmit)="onSubmit()">
+    <Shared-form-input label="Adresse email">
+        <input type="text" formControlName="email" autocomplete="email"/>
+    </Shared-form-input>
+    <Shared-form-input label="Mot de passe">
+        <input type="password" formControlName="password" autocomplete="off"/>
+    </Shared-form-input>
+    <Shared-form-input label="Confirmez votre mot de passe">
+        <input type="password" formControlName="passwordRepeat" autocomplete="off"/>
+    </Shared-form-input>
+
+    <Shared-button content="Inscription"></Shared-button>
+    <Shared-error *ngIf="error.activated" [content]="error.message"></Shared-error>
+</form>
