@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~11.2.7",
     "@angular/router": "~11.2.7",
     "@ngrx/store": "^11.1.1",
+    "@ngrx/effects": "11.1.1",
     "@ngstack/code-editor": "^3.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

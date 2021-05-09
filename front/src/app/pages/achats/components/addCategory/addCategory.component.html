@@ -1,0 +1,9 @@
+<form (submit)="onAddCategory()">
+    <input 
+        autocomplete="off" 
+        [(ngModel)]="categoryName" 
+        name="category"
+        type="text" 
+        placeholder="Ajoutez une catégorie d'achats (nourriture, bricolage, scolaire, etc...)"/>
+    <input type="submit" value="Ajouter"/>
+</form>
