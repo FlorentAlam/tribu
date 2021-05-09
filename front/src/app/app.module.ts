@@ -10,6 +10,8 @@ import { InscriptionComponent } from './pages/inscription/inscription.component'
 import { AuthLayout } from './pages/layout/auth-layout.component';
 import { SharedModule } from './core/shared/shared.module';
 import { AuthComponent } from './pages/authentification/authentification.component';
+import { AchatsComponent } from './pages/achats/achats.component';
+import { MessagerieComponent } from './pages/messagerie/messagerie.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { AuthComponent } from './pages/authentification/authentification.compone
     InscriptionComponent,
     ConnexionComponent,
     AuthLayout,
-    AuthComponent
+    AuthComponent,
+    AchatsComponent,
+    MessagerieComponent
   ],
   imports: [
     SharedModule,
