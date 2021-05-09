@@ -14,8 +14,14 @@ export class AddCategoryComponent{
 
     constructor(private _store: Store){}
 
-    onAddCategory(){
-        this._store.dispatch(new AddCategoryStart(this.categoryName));
-        this.categoryName = '';
+    public onAddCategory(): void{
+        if(this.isCategoryLengthEnough()){
+            this._store.dispatch(new AddCategoryStart(this.categoryName));
+            this.categoryName = '';
+        }
+    }
+
+    public isCategoryLengthEnough(): boolean{
+        return this.categoryName.length >= 3;
     }
 }
