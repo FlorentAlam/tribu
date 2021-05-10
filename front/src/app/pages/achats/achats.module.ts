@@ -6,12 +6,18 @@ import { AchatsRoutingModule } from "./achats-routing.module";
 import { AchatsComponent } from "./achats.component";
 import { AddCategoryComponent } from "./components/addCategory/addCategory.component";
 import { EffectsModule } from "@ngrx/effects";
+import { CategoryComponent } from "./components/category/category.component";
+import { CategoryItemComponent } from "./components/category-item/categoryItem.component";
+import { AddItemComponent } from "./components/addItem/addItem.component";
 
 
 @NgModule({
     declarations: [
         AchatsComponent,
-        AddCategoryComponent
+        AddCategoryComponent,
+        CategoryComponent,
+        CategoryItemComponent,
+        AddItemComponent
     ],
     imports: [
         AchatsRoutingModule,

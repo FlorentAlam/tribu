@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
+import { StoreModule } from '@ngrx/store';
 import { AddCategoryComponent } from './addCategory.component';
 
 describe('[Component] Add Category', () => {
@@ -9,7 +11,9 @@ describe('[Component] Add Category', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [
-                RouterTestingModule
+                RouterTestingModule,
+                StoreModule.forRoot({}),
+                FormsModule
             ],
             declarations: [
                 AddCategoryComponent

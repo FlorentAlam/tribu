@@ -1,6 +1,4 @@
 <add-category></add-category>
 <div *ngIf="(achats$ | async) as achats">
-    <div *ngFor="let achat of achats">
-        {{ achat.category }}
-    </div>
+    <achat-category *ngFor="let achat of achats" [achat]="achat"></achat-category>
 </div>

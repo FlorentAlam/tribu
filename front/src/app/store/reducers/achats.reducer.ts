@@ -14,8 +14,10 @@ export const achatReducer = (state = initialState, action: AchatsActions) => {
         case LOAD_ACHATS:
             return {...state, achats: action.payload};
         case ADD_CATEGORY:
-            const { payload } = action as AddCategory;
-            return {...state, achats: [...state.achats, new Achat(payload.category, [])]}
+            // console.log(action);
+            const { payload } = (action as AddCategory);
+            // console.log(payload);
+            return {...state, achats: [...state.achats, new Achat(payload, [])]}
         default:
             return state;
     }
