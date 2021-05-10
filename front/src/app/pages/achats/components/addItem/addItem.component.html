@@ -1,0 +1,9 @@
+<form (submit)="onSubmit()">
+    <input 
+        type="text" 
+        name="item" 
+        [(ngModel)]="itemName" 
+        autocomplete="off"
+        placeholder="Ajoutez un élement"/>
+    <input type="submit" value="Ajouter"/>
+</form>

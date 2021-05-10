@@ -2,6 +2,9 @@ import { DebugElement } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { ReactiveFormsModule } from "@angular/forms";
 import { By } from "@angular/platform-browser";
+import { ButtonComponent } from "src/app/core/shared/components/button/button.component";
+import { ErrorComponent } from "src/app/core/shared/components/error/error.component";
+import { FormInputComponent } from "src/app/core/shared/components/formInput/form-input.component";
 import { ConnexionComponent } from "./connexion.component";
 
 describe('[Component] Connexion', () => {
@@ -10,7 +13,7 @@ describe('[Component] Connexion', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [ ReactiveFormsModule ],
-            declarations: [ ConnexionComponent ]
+            declarations: [ ConnexionComponent, FormInputComponent, ButtonComponent, ErrorComponent ]
         }).compileComponents();
     });
 
@@ -29,8 +32,8 @@ describe('[Component] Connexion', () => {
         expect(label.nativeElement.textContent).toContain('Mot de passe');
     });
     it('should render submit button', () => {
-        const button = fixture.debugElement.query(By.css('input[type=submit]'));
-        expect(button.nativeElement.value).toEqual('Connexion');
+        const button = fixture.debugElement.query(By.css('button'));
+        expect(button.nativeElement.textContent).toEqual('Connexion');
     });
 
     it('should update email input value', () => {
@@ -52,7 +55,7 @@ describe('[Component] Connexion', () => {
         expect(component.connexionForm.value.password).toEqual('test');
     });
     it('submit button should trigger onSubmit()', () => {
-        const button = fixture.debugElement.query(By.css('input[type=submit]'));
+        const button = fixture.debugElement.query(By.css('button'));
 
         let spy = spyOn(component, 'onSubmit');
         button.nativeElement.click();
@@ -67,9 +70,8 @@ describe('[Component] Connexion', () => {
         beforeEach(() => {
             passwordInput = fixture.debugElement.query(By.css('input[type=password]')).nativeElement;
             emailInput = fixture.debugElement.query(By.css('input[type=text]')).nativeElement;
-            button = fixture.debugElement.query(By.css('input[type=submit]')).nativeElement;
+            button = fixture.debugElement.query(By.css('button')).nativeElement;
         });
-
         it('should not display any error if inputs are filled correctly', () => {
             emailInput.value = 'test@est.com';
             emailInput.dispatchEvent(new Event('input'));

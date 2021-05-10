@@ -22,12 +22,12 @@ export class AchatsEffects{
         );
     });
 
-    addAchat$ = createEffect(() => {
+    addCategory$ = createEffect(() => {
         return this._actions$.pipe(
             ofType(ADD_CATEGORY_START),
-            mergeMap((category: string) => {
-                return this._achats.addCategory(category).pipe(
-                    map((achat: Achat) => ({type: ADD_CATEGORY, payload: achat})),
+            mergeMap((actionData: {payload: string}) => {
+                return this._achats.addCategory(actionData.payload).pipe(
+                    map((name: string) => ({type: ADD_CATEGORY, payload: name})),
                     catchError(() => {
                         return EMPTY
                     })
