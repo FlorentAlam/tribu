@@ -1,0 +1,9 @@
+<div (click)="onEnable()">
+    <input
+        type="text"
+        autocomplete="off"
+        [(ngModel)]="categoryName"
+        (keydown.enter)="onSubmit()"
+        [disabled]="isDisabled"
+    />
+</div>
