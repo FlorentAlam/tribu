@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { Store } from "@ngrx/store";
+import { AddItem, AddItemStart } from "src/app/store/actions/achats.actions";
 
 @Component({
     selector: 'achat-add-item',
@@ -6,9 +8,13 @@ import { Component } from "@angular/core";
     styleUrls: ['./addItem.component.scss']
 })
 export class AddItemComponent{
+    @Input() cat_id!: number;
     public itemName: string = '';
+    public quantity: string = '';
+
+    constructor(private _store: Store){}
 
     onSubmit(){
-        console.log(this.itemName);
+        this._store.dispatch(new AddItemStart(this.cat_id, this.itemName, this.quantity));
     }
 }

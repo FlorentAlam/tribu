@@ -8,9 +8,9 @@ import { Achat, AchatItem } from "../models/achats.model";
 export class AchatService{
     public achats: Achat[] = [
         new Achat("supermarché", [
-                {name: 'courgette', quantity: '200gr'},
-                {name: 'raviolis', quantity: '1 boite'},
-                {name: 'saumon', quantity: '2 filets'}
+                {name: 'courgette', quantity: '200gr', id: 0},
+                {name: 'raviolis', quantity: '1 boite', id: 1},
+                {name: 'saumon', quantity: '2 filets', id: 2}
             ], 0
         )
     ]   
@@ -25,6 +25,6 @@ export class AchatService{
         return of(true);
     }
     public addItem(itemName: string, cat_id: number, quantity: string): Observable<AchatItem>{
-        return of(new AchatItem(itemName, quantity));
+        return of(new AchatItem(itemName, quantity, 3));
     }
 }
