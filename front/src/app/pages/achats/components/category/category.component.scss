@@ -1,3 +1,9 @@
 table{
     background: #eee;
 }
+tbody tr{
+    box-sizing: border-box;
+    padding: 3px;
+    margin-bottom: 3px;
+    display: flex;
+}

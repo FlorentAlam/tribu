@@ -1,0 +1,8 @@
+td:first-child{
+    flex-grow: 2;
+    text-transform: capitalize;
+}
+td:nth-child(2){
+    flex-grow: 1;
+    max-width: 80px;
+}

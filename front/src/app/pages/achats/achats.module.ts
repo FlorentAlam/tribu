@@ -9,6 +9,7 @@ import { EffectsModule } from "@ngrx/effects";
 import { CategoryComponent } from "./components/category/category.component";
 import { CategoryItemComponent } from "./components/category-item/categoryItem.component";
 import { AddItemComponent } from "./components/addItem/addItem.component";
+import { EditCategoryComponent } from "./components/editCategory/editCategory.component";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AddItemComponent } from "./components/addItem/addItem.component";
         AddCategoryComponent,
         CategoryComponent,
         CategoryItemComponent,
-        AddItemComponent
+        AddItemComponent,
+        EditCategoryComponent
     ],
     imports: [
         AchatsRoutingModule,
