@@ -1,6 +1,9 @@
 import { Injectable } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
 import { Observable, of } from "rxjs";
 import { Achat, AchatItem } from "../models/achats.model";
+const PORT = '4201';
+export const API = 'http://localhost:' + PORT + '/achat'
 
 @Injectable({
     providedIn: 'root'
@@ -15,6 +18,8 @@ export class AchatService{
         )
     ]   
 
+    constructor(private _http: HttpClient){}
+
     public getAchats(): Observable<Achat[]>{
         return of(this.achats);
     }
@@ -25,6 +30,10 @@ export class AchatService{
         return of(true);
     }
     public addItem(itemName: string, cat_id: number, quantity: string): Observable<AchatItem>{
-        return of(new AchatItem(itemName, quantity, 3));
+        return this._http.post<AchatItem>(`${API}/item`, {
+            name: itemName,
+            cat_id,
+            quantity
+        });
     }
 }
